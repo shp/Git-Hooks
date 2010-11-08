@@ -14,6 +14,7 @@ exec("git diff-index --cached --name-only {$against}", $output);
 foreach ($output as $file) {
     // finds any DOS carriage returns, but ignores .git directory
     // REGEX from:  http://stackoverflow.com/questions/73833/how-do-you-search-for-files-containing-dos-line-endings-crlf-with-grep-under-li
+    if (! is_readable($file)) continue;
     $cmd = "grep -PIlsr '\\r\\n' {$file}";
 
     $results = array();
