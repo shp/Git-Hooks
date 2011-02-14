@@ -16,6 +16,10 @@ foreach ($output as $file) {
         // don't check files that aren't PHP
         continue;
     }
+    if (!is_readable($file)) {
+        // file was removed
+        continue;
+    }
 
     $lint_output = array();
     exec("php -l " . escapeshellarg($file), $lint_output, $return);
