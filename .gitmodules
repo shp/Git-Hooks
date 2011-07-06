@@ -1,0 +1,3 @@
+[submodule "PivotalTrackerGithook"]
+	path = PivotalTrackerGithook
+	url = git://github.com/dalewking/PivotalTrackerGithook.git
