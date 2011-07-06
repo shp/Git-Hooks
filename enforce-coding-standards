@@ -19,6 +19,10 @@ foreach ($output as $file) {
         // don't check files that aren't PHP
         continue;
     }
+    if (!is_readable($file)) {
+        // file was removed
+        continue;
+    }
 
     $output = array();
     exec("phpcs --standard={$codingStandard} " . escapeshellarg($file), $output, $return);
