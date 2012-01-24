@@ -3,6 +3,7 @@
 $CONFIG = array(
     'preCommit' => array(
         'run-php-lint',
+        'run-puppet-syntax-check',
         'check-for-dos-endings',
         'check-whitespace',
         'enforce-coding-standards',
